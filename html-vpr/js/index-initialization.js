@@ -6,50 +6,132 @@ $(document).ready(function () {
         if (i > 2) {
             i = 1;
         }
-        $("#test_Pic>img").attr("src", "img/" + i + ".png").fadeIn(1000);
+        $("#test_Pic>img")
+            .attr("src", "img/" + i + ".png")
+            .fadeIn(1000);
     }, 500);
 
-    var mySwiper = new Swiper('#swiper-container1', {
-
-        direction: 'horizontal', //水平切换
+    var mySwiper = new Swiper("#swiper-container1", {
+        direction: "horizontal", //水平切换
         loop: true, //循环播放
         autoplay: true, //自动播放
         speed: 2000, //速度
 
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
         }
     });
-    //翻转效果
-    var mySwiper2 = new Swiper('#swiper-container2', {
-        //simulateTouch: true,
-        effect: 'flip',
-        flipEffect: {
-            slideShadows: true,
-            limitRotation: true,
-        }
-    })
 
-    $("#swiper-container2").hover(function () {
-        //alert(1);
-        mySwiper2.slideNext();
-    }, function () {
-        //alert(2);
-        mySwiper2.slidePrev();
+    var mySwipers = [];
+    var swiperContainers = ["swiper-container2", "swiper-container3", "swiper-container4","swiper-container5"]
+    $.each(swiperContainers, function (i, item) {
+        mySwipers[i] = new Swiper("#" + item, {
+            direction: "vertical",
+        });
+        $("#"+item).hover(
+            function () {
+                mySwipers[i].slideNext();
+            },
+            function () {
+                mySwipers[i].slidePrev();
+            }
+        );
     });
 
-
-
+    ////翻转效果
+    //var mySwiper2 = new Swiper("#swiper-container2", {
+    //    //simulateTouch: true,
+    //    direction: "vertical",
+    //    /*
+    //        effect: 'flip',
+    //        flipEffect: {
+    //            slideShadows: true,
+    //            limitRotation: true,
+    //        }
+    //    */
+    //});
+    
+    
+    //$("#swiper-container2").hover(
+    //    function () {
+    //        mySwiper2.slideNext();
+    //    },
+    //    function () {
+    //        mySwiper2.slidePrev();
+    //    }
+    //);
+    //var mySwiper3 = new Swiper("#swiper-container3", {
+    //    direction: "vertical",
+    //});
+    //$("#swiper-container3").hover(
+    //    function () {
+    //        mySwiper3.slideNext();
+    //    },
+    //    function () {
+    //        mySwiper3.slidePrev();
+    //    }
+    //);
+    //var mySwiper4 = new Swiper("#swiper-container4", {
+    //    direction: "vertical",
+    //});
+    //$("#swiper-container4").hover(
+    //    function () {
+    //        mySwiper4.slideNext();
+    //    },
+    //    function () {
+    //        mySwiper4.slidePrev();
+    //    }
+    //);
+    //var mySwiper5 = new Swiper("#swiper-container5", {
+    //    direction: "vertical",
+    //});
+    //$("#swiper-container5").hover(
+    //    function () {
+    //        mySwiper5.slideNext();
+    //    },
+    //    function () {
+    //        mySwiper5.slidePrev();
+    //    }
+    //);
     //导航窗格激活效果
-    $('.nav.navbar-nav>li').hover(function () {
-        //alert(0);
-        $(this).addClass('active');
-    }, function () {
-        //alert(1);
-        $(this).removeClass('active');
-    });
+    $(".nav.navbar-nav>li").hover(
+        function () {
+            //alert(0);
+            $(this).addClass("active");
+        },
+        function () {
+            //alert(1);
+            $(this).removeClass("active");
+        }
+    );
 
+    /*
+      $('.test').hover(function () {
+              $(".test").fadeOut('slow').addClass('vpr-elements-dis');
+              $(".test1").removeClass('vpr-elements-dis').slideUp('slow').css('display', "");
+          },
+          function () {
+              $('.test1').hover(function () {
+                  return 0;
+              }, function () {
+                  $(".test").removeClass('vpr-elements-dis').slideDown('slow').css('display', "");
+                  $(".test1").fadeOut('slow').addClass('vpr-elements-dis');
+                  //alert(0);
+              })
+
+              //return 0;
+              //$(".test1").slideDown("1500").addClass('vpr-elements-dis');
+              //$(".test").fadeIn('slow').removeClass('vpr-elements-dis');
+              
+              if (j == 1) {
+                  $(".test").slideDown('slow').removeClass('vpr-elements-dis');
+                  $(".test1").slideDown("1500").addClass('vpr-elements-dis');
+                  j = 0;
+                  alert(j)
+              }
+              
+          });
 
     /*
     $('.test').hover(function () {
@@ -96,5 +178,23 @@ $(document).ready(function () {
         function () {
 
         });
-        */
-})
+        
+    $('.test1').hover(function () {
+            //return 0;
+            $('.test').removeClass('vpr-elements-dis');
+            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
+        },
+        function () {
+
+        });
+
+    $('.test1').hover(function () {
+            //return 0;
+            $('.test').removeClass('vpr-elements-dis');
+            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
+        },
+        function () {
+
+        });
+    */
+});
