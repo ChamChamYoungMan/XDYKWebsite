@@ -10,7 +10,6 @@ $(document).ready(function () {
             .attr("src", "img/" + i + ".png")
             .fadeIn(1000);
     }, 500);
-
     var mySwiper = new Swiper("#swiper-container1", {
         direction: "horizontal", //水平切换
         loop: true, //循环播放
@@ -22,14 +21,19 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev"
         }
     });
-
+    ////翻转效果
     var mySwipers = [];
-    var swiperContainers = ["swiper-container2", "swiper-container3", "swiper-container4","swiper-container5"]
+    var swiperContainers = [
+        "swiper-container2",
+        "swiper-container3",
+        "swiper-container4",
+        "swiper-container5"
+    ];
     $.each(swiperContainers, function (i, item) {
         mySwipers[i] = new Swiper("#" + item, {
-            direction: "vertical",
+            direction: "vertical"
         });
-        $("#"+item).hover(
+        $("#" + item).hover(
             function () {
                 mySwipers[i].slideNext();
             },
@@ -39,162 +43,44 @@ $(document).ready(function () {
         );
     });
 
-    ////翻转效果
-    //var mySwiper2 = new Swiper("#swiper-container2", {
-    //    //simulateTouch: true,
-    //    direction: "vertical",
-    //    /*
-    //        effect: 'flip',
-    //        flipEffect: {
-    //            slideShadows: true,
-    //            limitRotation: true,
-    //        }
-    //    */
-    //});
-    
-    
-    //$("#swiper-container2").hover(
-    //    function () {
-    //        mySwiper2.slideNext();
-    //    },
-    //    function () {
-    //        mySwiper2.slidePrev();
-    //    }
-    //);
-    //var mySwiper3 = new Swiper("#swiper-container3", {
-    //    direction: "vertical",
-    //});
-    //$("#swiper-container3").hover(
-    //    function () {
-    //        mySwiper3.slideNext();
-    //    },
-    //    function () {
-    //        mySwiper3.slidePrev();
-    //    }
-    //);
-    //var mySwiper4 = new Swiper("#swiper-container4", {
-    //    direction: "vertical",
-    //});
-    //$("#swiper-container4").hover(
-    //    function () {
-    //        mySwiper4.slideNext();
-    //    },
-    //    function () {
-    //        mySwiper4.slidePrev();
-    //    }
-    //);
-    //var mySwiper5 = new Swiper("#swiper-container5", {
-    //    direction: "vertical",
-    //});
-    //$("#swiper-container5").hover(
-    //    function () {
-    //        mySwiper5.slideNext();
-    //    },
-    //    function () {
-    //        mySwiper5.slidePrev();
-    //    }
-    //);
+    //滑动效果展示产品
+    var mySwiper_production = new Swiper('#swiper-container7', {
+        direction: "horizontal",
+        initialSlide: 3,
+        //effect: "coverflow",
+        slidesPerView: 3,
+        //spaceBetween: 30,
+        centeredSlides: true,
+        /*
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        */
+        loop: true,
+        navigation: {
+            nextEl: ".product_Next",
+            prevEl: ".product_Prev"
+        },
+    });
+
+    $("#swiper-container7").hover(function () {
+        $(".product_Next").removeClass("vpr-elements-dis");
+        $(".product_Prev").removeClass("vpr-elements-dis");
+    }, function () {
+        $(".product_Next").addClass("vpr-elements-dis");
+        $(".product_Prev").addClass("vpr-elements-dis");
+    });
+
     //导航窗格激活效果
     $(".nav.navbar-nav>li").hover(
         function () {
-            //alert(0);
             $(this).addClass("active");
         },
         function () {
-            //alert(1);
             $(this).removeClass("active");
         }
     );
 
-    /*
-      $('.test').hover(function () {
-              $(".test").fadeOut('slow').addClass('vpr-elements-dis');
-              $(".test1").removeClass('vpr-elements-dis').slideUp('slow').css('display', "");
-          },
-          function () {
-              $('.test1').hover(function () {
-                  return 0;
-              }, function () {
-                  $(".test").removeClass('vpr-elements-dis').slideDown('slow').css('display', "");
-                  $(".test1").fadeOut('slow').addClass('vpr-elements-dis');
-                  //alert(0);
-              })
 
-              //return 0;
-              //$(".test1").slideDown("1500").addClass('vpr-elements-dis');
-              //$(".test").fadeIn('slow').removeClass('vpr-elements-dis');
-              
-              if (j == 1) {
-                  $(".test").slideDown('slow').removeClass('vpr-elements-dis');
-                  $(".test1").slideDown("1500").addClass('vpr-elements-dis');
-                  j = 0;
-                  alert(j)
-              }
-              
-          });
-
-    /*
-    $('.test').hover(function () {
-            $(".test").fadeOut('slow').addClass('vpr-elements-dis');
-            $(".test1").removeClass('vpr-elements-dis').slideUp('slow').css('display', "");
-        },
-        function () {
-            $('.test1').hover(function () {
-                return 0;
-            }, function () {
-                $(".test").removeClass('vpr-elements-dis').slideDown('slow').css('display', "");
-                $(".test1").fadeOut('slow').addClass('vpr-elements-dis');
-                //alert(0);
-            })
-
-            //return 0;
-            //$(".test1").slideDown("1500").addClass('vpr-elements-dis');
-            //$(".test").fadeIn('slow').removeClass('vpr-elements-dis');
-            
-            if (j == 1) {
-                $(".test").slideDown('slow').removeClass('vpr-elements-dis');
-                $(".test1").slideDown("1500").addClass('vpr-elements-dis');
-                j = 0;
-                alert(j)
-            }
-            
-        });
-
-  
-    $('.test1').hover(function () {
-            //return 0;
-            $('.test').removeClass('vpr-elements-dis');
-            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
-        },
-        function () {
-
-        });
-       
-    $('.test1').hover(function () {
-            //return 0;
-            $('.test').removeClass('vpr-elements-dis');
-            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
-        },
-        function () {
-
-        });
-        
-    $('.test1').hover(function () {
-            //return 0;
-            $('.test').removeClass('vpr-elements-dis');
-            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
-        },
-        function () {
-
-        });
-
-    $('.test1').hover(function () {
-            //return 0;
-            $('.test').removeClass('vpr-elements-dis');
-            $('.test1').slideDown(1500).addClass('vpr-elements-dis');
-        },
-        function () {
-
-        });
-    */
 });
