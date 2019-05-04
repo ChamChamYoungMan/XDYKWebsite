@@ -27,7 +27,12 @@ $(document).ready(function () {
         "swiper-container2",
         "swiper-container3",
         "swiper-container4",
-        "swiper-container5"
+        "swiper-container5",
+        "swiper-container6",
+        "swiper-container7",
+        "swiper-container8",
+        "swiper-container9"
+
     ];
     $.each(swiperContainers, function (i, item) {
         mySwipers[i] = new Swiper("#" + item, {
@@ -44,7 +49,7 @@ $(document).ready(function () {
     });
 
     //滑动效果展示产品
-    var mySwiper_production = new Swiper('#swiper-container7', {
+    var mySwiper_production = new Swiper('#swiper-container10', {
         direction: "horizontal",
         initialSlide: 3,
         //effect: "coverflow",
@@ -64,7 +69,7 @@ $(document).ready(function () {
         },
     });
 
-    $("#swiper-container7").hover(function () {
+    $("#swiper-container10").hover(function () {
         $(".product_Next").removeClass("vpr-elements-dis");
         $(".product_Prev").removeClass("vpr-elements-dis");
     }, function () {
