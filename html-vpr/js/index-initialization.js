@@ -31,7 +31,16 @@ $(document).ready(function () {
         "swiper-container6",
         "swiper-container7",
         "swiper-container8",
-        "swiper-container9"
+        "swiper-container9",
+        "swiper-container10",
+        "swiper-container11",
+        "swiper-container13",
+        "swiper-container14",
+        "swiper-container15",
+        "swiper-container16",
+        "swiper-container17",
+        "swiper-container18",
+        "swiper-container19",
 
     ];
     $.each(swiperContainers, function (i, item) {
@@ -49,7 +58,7 @@ $(document).ready(function () {
     });
 
     //滑动效果展示产品
-    var mySwiper_production = new Swiper('#swiper-container10', {
+    var mySwiper_production = new Swiper('#swiper-container12', {
         direction: "horizontal",
         initialSlide: 3,
         //effect: "coverflow",
@@ -68,13 +77,12 @@ $(document).ready(function () {
             prevEl: ".product_Prev"
         },
     });
-
-    $("#swiper-container10").hover(function () {
-        $(".product_Next").removeClass("vpr-elements-dis");
-        $(".product_Prev").removeClass("vpr-elements-dis");
+    $("#swiper-container12").hover(function () {
+        $(".product_Next").fadeIn("slow");
+        $(".product_Prev").fadeIn("slow");
     }, function () {
-        $(".product_Next").addClass("vpr-elements-dis");
-        $(".product_Prev").addClass("vpr-elements-dis");
+        $(".product_Next").fadeOut("slow");
+        $(".product_Prev").fadeOut("slow");
     });
 
     //导航窗格激活效果
@@ -86,6 +94,8 @@ $(document).ready(function () {
             $(this).removeClass("active");
         }
     );
+
+
 
 
 });
