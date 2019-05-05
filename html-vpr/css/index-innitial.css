@@ -7,7 +7,7 @@
 .bgc-section-solve,
 .bgc-section-product,
 .bgc-section-coo {
-    width: 1920px;
+    width: 100%;
     height: 888px;
 }
 
@@ -28,7 +28,7 @@
 .vpr-tech,
 .vpr-tech-core,
 .vpr-tech-solve {
-    width: 380px;
+    width: 25%;
     height: 300px;
     box-shadow: 0 0 4px #ccc;
     margin: 0 2% 3%;
@@ -85,7 +85,7 @@
 
 .vpr-pro-children,
 .vpr-pro-children-sec {
-    width: 560px;
+    width: 75%;
     height: 245px;
     background-color: black;
     box-shadow: 4px 4px 4px 4px solid #ccc;
@@ -103,7 +103,7 @@
 
 .vpr-coo-children-left,
 .vpr-coo-children-right {
-    width: 150px;
+    width: 8%;
     height: 400px;
     display: inline-block;
     background-color: rgba(32, 50, 118, 1);
@@ -114,33 +114,12 @@
 .vpr-coo-slide-col-2,
 .vpr-coo-slide-col-3,
 .vpr-coo-slide-col-4 {
-    width: 405px;
     height: 400px;
-
 }
 
-.vpr-coo-slide-col-1 {
-    background-color: black;
-}
-
-.vpr-coo-slide-col-2 {
-    background-color: red;
-}
-
-.vpr-coo-slide-col-3 {
-    background-color: green;
-}
-
-.vpr-coo-slide-col-4 {
-    background-color: blue;
-}
-
-.vpr-coo-slide-col-5 {
-    background-color: yellow;
-}
 
 .vpr-coo-product {
-    width: 1600px;
+    width:83%;
     display: inline-block;
 }
 
@@ -173,5 +152,5 @@
     display: flex;
     padding-top: 25px;
     padding-bottom: 21px;
-    width: 1200px
+    width: 100%
 }
