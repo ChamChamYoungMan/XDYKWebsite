@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="img/X.png" />
+    <title>信大煜坤</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index-innitial.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #div1 div {
+        width: 290px;
+        height: 200px;
+        display: none;
+        padding: 5px;
+        text-indent: 2em;
+        background: lavenderblush;
+        color: #666;
+        font-size: 16px;
+    }
+
+    #div1 {
+        font-size: 0;
+        width: 300px;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    #div1 input {
+        font-size: 14px;
+        display: inline-block;
+        width: 100px;
+        border: none;
+        height: 30px;
+        line-height: 30px;
+        border-left: 1px solid #cdcdcd;
+        box-sizing: border-box;
+    }
+
+    #div1 input:first-of-type {
+        border-left: none;
+    }
+
+    .active {
+        background: darkcyan;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <!--导航-->
+    <section>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img style="padding-top: 0%; width:100px; height:30px" src="img/xdykpng.png" alt="brand" />
+                    </a>
+                </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">产品</a></li>
+                    <li><a href="#">解决方案</a></li>
+                    <li><a href="#">技术支持</a></li>
+                    <li><a href="#">成功案例</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <!-- <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Dinner
+                            <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">产品</a></li>
+                            <li><a href="#">解决方案</a></li>
+                            <li><a href="#">技术支持</a></li>
+                            <li><a href="#">成功案例</a></li>
+                            <li><a href="#">关于我们</a></li>
+                          </ul>
+                        </li> -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <button type="submit" class="btn btn-default navbar-btn">
+                        注册
+                    </button>
+                    <button type="submit" class="btn btn-primary navbar-btn">
+                        登录
+                    </button>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <!--banner图-->
+    <section>
+        <div style="width:1920;height:560px;background-color:cornflowerblue;"></div>
+    </section>
+    <!--正式内容-->
+    <section>
+        <div class="container-fluid body-production-service">
+            <div class="text-brand-product">
+                <h3>产品服务</h3>
+                <h5>Product Service</h5>
+            </div>
+            <div class="tree" style="width:100%;padding: 5% 5% 5% 5%">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <h3>产品服务</h3>
+                    <ul>
+                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>语音识别</span>
+                            <ul>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">即时语音识别</a></li>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">音频文件识别</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>声纹识别</span>
+                            <ul>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">说话人识别</a></li>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">语种识别</a></li>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">关键词识别</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>OCR识别</span>
+                            <ul>
+                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
+                                        style="text-decoration: none;">文件识别</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>图像检索</span></li>
+
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div id="div1">
+                        <input type="button" value="111" class="active">
+                        <input type="button" value="222">
+                        <input type="button" value="333">
+                        <div style="display: block;">11111111111111</div>
+                        <div>22222222</div>
+                        <div>3333333333333333</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <section>
+        <div class="foot-section container-fluid">
+            <ul class="foot-section-inhert" style="list-style: none;">
+                <li class="foot-subitem-left">
+                    <div id="hilp" class="col-xs-4 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>产品</h3>
+                            <li>
+                                <a href="#" target="_blank">语音识别</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">声纹识别</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">OCR识别</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">图像检索</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="resource" class="col-xs-4 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>解决方案</h3>
+                            <li>
+                                <a href="#" target="_blank">智能语音转写</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="aboutus" class="col-xs-4 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>技术支持</h3>
+                            <li>
+                                <a href="#" target="_blank">语音识别技术</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">语音合成技术</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">声纹识别技术</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">自然语言理解</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">视觉感知</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="seat" class="col-xs-4 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>成功案例</h3>
+                            <li>
+                                <a href="#" target="_blank">法院智能庭审系统</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">智能会议听抄系统</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">公安智能审讯系统</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="business" class="col-xs-4 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>关于我们</h3>
+                            <li>
+                                <a href="#" target="_blank">公司简介</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">组织架构</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">首席科学家</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">加入我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="bis-coopera" class="col-xs-5 col-sm-2">
+                        <ul class="foot-section-list">
+                            <h3>商务合作</h3>
+                            <li>
+                                <p>咨询电话：18337186386（江小姐）</p>
+                            </li>
+                            <li>
+                                <p>地址:郑州市龙子湖智慧岛利丰国际大厦503、512</p>
+                            </li>
+                            <li>
+                                <p>关注微信号</p>
+                                <br />
+                                <img src="img/coo/信大煜坤公众号二维码.png" alt="#" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="foot-subitem-right">
+                    <img src="img/xdykpng.png" class="foot-xdyk-img" />
+                    <h3 class="foot-xdyk-line">信大煜坤</h3>
+                </li>
+                <hr />
+                <div class="text-brand-foot">
+                    <h6>
+                        友情链接：<a href="#">信大煜坤人工智能科技研究院 </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a
+                            href="#">信大煜坤人工智能科技有限公司</a>
+                    </h6>
+                    <h6>河南信大煜坤智能科技有限公司 版权所有 2018-2020</h6>
+                </div>
+            </ul>
+        </div>
+    </section>
+
+</body>
+<script type="text/javascript">
+    $(function () {
+        $('#div1').find('input').click(function () {
+            $('#div1').find('input').attr('class', '');
+            $('#div1').find('div').css('display', 'none');
+            $(this).attr('class', 'active');
+            $('#div1').find('div').eq($(this).index()).css('display', 'block');
+        })
+    })
+
+    $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+</script>
+
+</html>

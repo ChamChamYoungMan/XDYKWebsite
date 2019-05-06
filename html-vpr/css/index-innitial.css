@@ -1,112 +1,243 @@
+/* 首页index相关样式 */
 .vpr-elements-dis {
-    display: none;
+  display: none;
 }
 
 .bgc-section,
 .bgc-section-core,
 .bgc-section-solve,
 .bgc-section-product,
-.bgc-section-coo {
-    width: 100%;
-    height: 888px;
+.bgc-section-coo,
+.bgc-section-img {
+  width: 100%;
+  height: 888px;
+}
+
+.bgc-section-img {
+  height: auto;
 }
 
 .bgc-section-solve {
-    background: rgba(32, 50, 118, 1);
-    height: 900px;
+  background: rgba(32, 50, 118, 1);
+  height: 900px;
 }
 
 .bgc-section-product {
-    height: 750px;
+  height: 750px;
 }
 
 .bgc-section-coo {
-
-    height: 600px;
+  height: 600px;
 }
 
 .vpr-tech,
 .vpr-tech-core,
 .vpr-tech-solve {
-    width: 25%;
-    height: 300px;
-    box-shadow: 0 0 4px #ccc;
-    margin: 0 2% 3%;
+  width: 25%;
+  height: 300px;
+
+  padding: 0;
+  margin: 0 2% 3% 0;
+}
+
+.vpr-tech-core {
+  box-shadow: 2px 2px 2px #888888;
 }
 
 .div-align {
-    margin: auto;
+  margin: 0;
 }
 
 .div-fetch,
 .div-fetch-solve,
 .div-fetch-product {
-    margin-top: 30px;
-    margin-left: 18%;
+  margin-top: 30px;
+  margin-left: 18%;
 }
 
 .div-fetch-solve {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .vpr-subitem,
-.vpr-subitem-core,
-.vpr-subitem-solve {
-    position: relative;
-    margin: 10px 0 0 0;
+.vpr-subitem-core .vpr-subitem-solve {
+  position: relative;
+  margin: 0 0 0 0;
 }
 
 .vpr-subitem-children,
-.vpr-subitem-children-core,
-.vpr-subitem-children-solve {
-    width: 100%;
-    height: auto;
-    background-color: blueviolet;
-    text-align: center;
-    font-size: 20px;
+.vpr-subitem-children-core-tts,
+.vpr-subitem-children-core-bgc,
+.vpr-subitem-children-core-asr,
+.vpr-subitem-children-core-vpr,
+.vpr-subitem-children-core-nlp,
+.vpr-subitem-children-core-ver,
+.vpr-subitem-children-solve-court,
+.vpr-subitem-children-solve-bgc,
+.vpr-subitem-children-solve-police,
+.vpr-subitem-children-solve-procuratorial,
+.vpr-subitem-children-solve-prizon,
+.vpr-subitem-children-solve-meetting,
+.vpr-subitem-children-coo,
+.vpr-subitem-children-bgc {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.vpr-subitem-children-core-bgc {
+  padding: 20% 0 0 0;
+  background: url("../img/core/矩形699拷贝10.png") no-repeat;
+}
+
+.vpr-subitem-children-core-tts {
+  padding: 20% 0 0 0;
+  background: url("../img/core/语音合成背景.png") no-repeat;
+}
+
+.vpr-subitem-children-core-asr {
+  padding: 20% 0 0 0;
+  background: url("../img/core/语音识别背景.png") no-repeat;
+}
+
+.vpr-subitem-children-core-vpr {
+  padding: 20% 0 0 0;
+  background: url("../img/core/声纹识别背景.png") no-repeat;
+}
+
+.vpr-subitem-children-core-nlp {
+  padding: 20% 0 0 0;
+  background: url("../img/core/自然语言理解背景.png") no-repeat;
+}
+
+.vpr-subitem-children-core-ver {
+  padding: 20% 0 0 0;
+  background: url("../img/core/视觉感知背景.png") no-repeat;
+}
+
+.vpr-subitem-children-solve-bgc {
+  padding: 5% 3% 0 3%;
+  background: url("../img/solve/矩形743拷贝9.png") no-repeat;
+}
+
+.vpr-subitem-children-solve-court {
+  padding: 30% 0 0 0;
+  background: url("../img/solve/法院智能语音庭审系统.png") no-repeat;
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-solve-meetting {
+  padding: 30% 0 0 0;
+  background: url("../img/solve/会议听抄.png") no-repeat;
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-solve-police {
+  padding: 30% 0 0 0;
+  background: url("../img/solve/公安智能语音审讯系统.png") no-repeat;
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-solve-procuratorial {
+  padding: 30% 0 0 0;
+  background: url("../img/solve/检务智能审讯系统.png") no-repeat;
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-solve-prizon {
+  padding: 30% 0 0 0;
+  background: url("../img/solve/智能监狱会见系统.png") no-repeat;
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-coo {
+  padding: 40% 0 0 0;
+  background: url("../img/coo/占位.png") no-repeat;
+  opacity: 0.5;
+}
+
+.vpr-subitem-children-coo p {
+  color: white;
+  margin-top: 10%;
+}
+
+.vpr-subitem-children-bgc {
+  padding: 40% 0 0 0;
+  background: url("../img/coo/矩形744拷贝.png");
+  opacity: 0.8;
+}
+
+.vpr-subitem-children-bgc p {
+  color: white;
+  font-size: 15px;
 }
 
 .text-brand-core,
 .text-brand-solve,
 .text-brand-product,
-.text-brand-coo {
-    text-align: center;
-    vertical-align: middle;
+.text-brand-coo,
+.text-brand-foot {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text-brand-core-tip {
+  margin-top: 15%;
+}
+
+.span-tip {
+  font-size: 20px;
+  font-style: "微软雅黑";
+}
+
+.span-arti {
+  font-size: 14px;
+  font-style: "微软雅黑";
 }
 
 .text-brand-solve {
-    color: white;
+  color: white;
 }
 
 .vpr-pro-list,
 .foot-section-list {
-    list-style: none;
+  list-style: none;
+}
+
+.vpr-pro-adv-1 {
+  float: left;
+  margin-top: 6%;
+}
+
+.vpr-pro-adv-2 {
+  margin: 10% 0 0 30%;
 }
 
 .vpr-pro-children,
 .vpr-pro-children-sec {
-    width: 75%;
-    height: 245px;
-    background-color: black;
-    box-shadow: 4px 4px 4px 4px solid #ccc;
+  width: 75%;
+  height: 245px;
+  padding: 5% 5% 5% 5%;
+  background: url("../img/advan/矩形12.png") no-repeat;
+  box-shadow: 10px 10px 10px #888888;
 }
 
 .vpr-pro-children-sec {
-    margin-top: 78px;
+  margin-top: 15%;
 }
 
 .text-top {
-    width: 100%;
-    height: 60px;
-
+  width: 100%;
+  height: 60px;
 }
 
 .vpr-coo-children-left,
 .vpr-coo-children-right {
-    width: 8%;
-    height: 400px;
-    display: inline-block;
-    background-color: rgba(32, 50, 118, 1);
+  width: 8%;
+  height: 400px;
+  display: inline-block;
+  background-color: rgba(32, 50, 118, 1);
 }
 
 .vpr-coo-slide,
@@ -114,43 +245,99 @@
 .vpr-coo-slide-col-2,
 .vpr-coo-slide-col-3,
 .vpr-coo-slide-col-4 {
-    height: 400px;
+  height: 400px;
 }
 
+.vpr-coo-bottom-div {
+  display: table;
+  height: auto;
+  padding: 3% 10% 3% 30%;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.vpr-coo-bottom-li-1 {
+  display: table-cell;
+  width: 40%;
+  vertical-align: middle;
+}
+
+.vpr-coo-bottom-li-2 {
+  display: table-cell;
+  color: #2277e6;
+  float: right;
+}
 
 .vpr-coo-product {
-    width:83%;
-    display: inline-block;
+  width: 83%;
+  display: inline-block;
 }
 
 .navbar-brand {
-    float: left;
-    height: 50px;
-    padding: 10px 10px;
-    font-size: 18px;
-    line-height: 20px;
+  float: left;
+  height: 50px;
+  padding: 10px 10px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .navbar {
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 0%;
-    border: 1px solid transparent;
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0%;
+  border: 1px solid transparent;
 }
 
 .foot-section {
-    position: absolute;
-    width: 100%;
-    margin-top: 30px;
-    background: #141519;
-    color: #7e8187;
-    font-size: 12px
+  position: absolute;
+  width: 100%;
+  margin-top: 30px;
+  background: #141519;
+  color: white;
+  font-size: 12px;
+  display: block;
+}
+
+.foot-section a {
+  color: white;
 }
 
 .foot-section-inhert {
-    margin: 0 auto;
-    display: flex;
-    padding-top: 25px;
-    padding-bottom: 21px;
-    width: 100%
+  margin: 0 auto;
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 21px;
+  width: 100%;
+  display: block;
+}
+
+.foot-subitem-left {
+  width: 100%;
+  height: auto;
+  padding: 0 15% 0 15%;
+  float: left;
+  display: block;
+}
+
+.foot-subitem-right {
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.foot-xdyk-line {
+  display: inline-block;
+}
+
+.foot-xdyk-img {
+  width: 109px;
+  height: 30px;
+  align-items: center;
+}
+
+/*产品服务*/
+.body-production-service {
+  width: 100%;
+  height: auto;
 }

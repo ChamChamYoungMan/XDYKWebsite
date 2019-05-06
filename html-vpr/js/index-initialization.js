@@ -40,7 +40,6 @@ $(document).ready(function () {
         "swiper-container16",
         "swiper-container17",
         "swiper-container18",
-        "swiper-container19",
 
     ];
     $.each(swiperContainers, function (i, item) {
@@ -60,9 +59,9 @@ $(document).ready(function () {
     //滑动效果展示产品
     var mySwiper_production = new Swiper('#swiper-container12', {
         direction: "horizontal",
-        initialSlide: 3,
+        initialSlide: 1,
         //effect: "coverflow",
-        slidesPerView: 3,
+        slidesPerView: 5,
         //spaceBetween: 30,
         centeredSlides: true,
         /*
