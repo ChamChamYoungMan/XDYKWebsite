@@ -15,54 +15,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index-innitial.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css>">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-treeview.js"></script>
     <script type="text/javascript" src="js/"></script>
+    <style>
+        .nav-tabs>li {
+            width: 25%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .body-div-content {
+            width: 70%;
+            margin: 0;
+            padding: 1% 10% 5% 10%;
+        }
+
+        .tab-content-sel {
+            margin-top: 1%;
+            height: auto;
+        }
+
+
+        .span-text {
+            margin-top: 5%;
+        }
+
+        .tab-div {
+            width: 100%;
+            height: auto;
+        }
+
+        .tab-content-div {
+            padding: 2% 7% 10% 7%;
+        }
+
+        .tab-content-box {
+            height: auto;
+            padding: 3% 7% 5% 7%;
+        }
+
+        .tab-content-box-img {
+            margin-top: 4%;
+            text-align: right;
+        }
+
+        .tab-content-box-word {
+            text-align: left;
+        }
+
+        .tab-content-box-word-size {
+            font-size: 20px;
+        }
+
+        .tab-content-box-word-up {
+            margin-top: 0;
+        }
+
+        .tab-content-box-word-down {
+            margin-top: 10%;
+        }
+    </style>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    #div1 div {
-        width: 290px;
-        height: 200px;
-        display: none;
-        padding: 5px;
-        text-indent: 2em;
-        background: lavenderblush;
-        color: #666;
-        font-size: 16px;
-    }
-
-    #div1 {
-        font-size: 0;
-        width: 300px;
-        padding: 20px;
-        overflow: hidden;
-    }
-
-    #div1 input {
-        font-size: 14px;
-        display: inline-block;
-        width: 100px;
-        border: none;
-        height: 30px;
-        line-height: 30px;
-        border-left: 1px solid #cdcdcd;
-        box-sizing: border-box;
-    }
-
-    #div1 input:first-of-type {
-        border-left: none;
-    }
-
-    .active {
-        background: darkcyan;
-        color: #fff;
-    }
-</style>
 
 <body>
     <!--导航-->
@@ -80,19 +96,6 @@
                     <li><a href="#">技术支持</a></li>
                     <li><a href="#">成功案例</a></li>
                     <li><a href="#">关于我们</a></li>
-                    <!-- <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Dinner
-                            <b class="caret"></b>
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li><a href="#">产品</a></li>
-                            <li><a href="#">解决方案</a></li>
-                            <li><a href="#">技术支持</a></li>
-                            <li><a href="#">成功案例</a></li>
-                            <li><a href="#">关于我们</a></li>
-                          </ul>
-                        </li> -->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <button type="submit" class="btn btn-default navbar-btn">
@@ -107,7 +110,7 @@
     </section>
     <!--banner图-->
     <section>
-        <div style="width:1920;height:560px;background-color:cornflowerblue;"></div>
+        <div style="width:1920px;height:560px;background-color:cornflowerblue;"></div>
     </section>
     <!--正式内容-->
     <section>
@@ -116,52 +119,160 @@
                 <h3>产品服务</h3>
                 <h5>Product Service</h5>
             </div>
-            <div class="tree" style="width:100%;padding: 5% 5% 5% 5%">
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <h3>产品服务</h3>
-                    <ul>
-                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>语音识别</span>
-                            <ul>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">即时语音识别</a></li>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">音频文件识别</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>声纹识别</span>
-                            <ul>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">说话人识别</a></li>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">语种识别</a></li>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">关键词识别</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>OCR识别</span>
-                            <ul>
-                                <li class="btn btn-sm btn-warning"><i class="icon-time"></i><a href="#"
-                                        style="text-decoration: none;">文件识别</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><span class="btn btn-lg btn-success"><i class="glyphicon glyphicon-cog"></i>图像检索</span></li>
-
-                    </ul>
+            <div class="body-div-content">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin-top:10%;">
+                    <div class="panel panel-primary ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">产品服务</h3>
+                        </div>
+                        <div class="panel-body right_centent">
+                            <div id="left-tree"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div id="div1">
-                        <input type="button" value="111" class="active">
-                        <input type="button" value="222">
-                        <input type="button" value="333">
-                        <div style="display: block;">11111111111111</div>
-                        <div>22222222</div>
-                        <div>3333333333333333</div>
+                    <div class="container">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1" data-toggle="tab">
+                                    <div class="tab-div"><img src="img/pro-content/dyvms语音服务.png" /></div>
+                                    <div class="tab-div span-text"><span>语音识别</span></div>
+                                </a>
+                            </li>
+                            <li><a href="#tab2" data-toggle="tab">
+                                    <div class="tab-div"><img src="img/pro-content/声音.png" />
+                                    </div>
+                                    <div class="tab-div span-text"><span>声纹识别</span></div>
+                                </a></li>
+                            <li><a href="#tab3" data-toggle="tab">
+                                    <div class="tab-div"><img src="img/pro-content/扫描文字识别OCR.png" /></div>
+                                    <div class="tab-div span-text"><span>OCR识别</span></div>
+                                </a></li>
+                            <li><a href="#tab4" data-toggle="tab">
+                                    <div class="tab-div"><img src="img/pro-content/图像识别.png" />
+                                    </div>
+                                    <div class="tab-div span-text"><span>图像识别</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="tab-content tab-content-div">
+                            <div role="tabpanel" class="tab-pane active tab-content-sel" id="tab1">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                                        <img src="img/pro-content/接入方式.png" alt="">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                                        <div class="tab-content-box-word-up">
+                                            <span class="tab-content-box-word-si"><strong>接入方式灵活</strong></span>
+                                        </div>
+                                        <div class="tab-content-box-word-down">
+                                            <span>可以根据用户要求接入本地服务器， 利用本机引擎进行识别</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                                        <img src="img/pro-content/多种场景.png" alt="">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                                        <div class="tab-content-box-word-up">
+                                            <span class="tab-content-box-word-si"><strong>多种场景定制</strong></span>
+                                        </div>
+                                        <div class="tab-content-box-word-down">
+                                            <span>可自由定制垂直领域的语音识别模型， 识别效果更精确</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                                        <img src="img/pro-content/识别速度快.png" alt="">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                                        <div class="tab-content-box-word-up">
+                                            <span class="tab-content-box-word-si"><strong>识别速度快</strong></span>
+                                        </div>
+                                        <div class="tab-content-box-word-down">
+                                            <span>采用优化深度学习算法，提高系统 效率，实现语音数据的传输和识别的同步，实时率可达0.3S以下</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                                        <img src="img/pro-content/超高识别率.png" alt="">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                                        <div class="tab-content-box-word-up">
+                                            <span class="tab-content-box-word-si"><strong>超高识别率</strong></span>
+                                        </div>
+                                        <div class="tab-content-box-word-down">
+                                            <span> 基于最新进的深度学习算法模型，普通识别准确率高达95%，对特定行业词汇进行优化，可进一步提升语音识别率</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                                        <img src="img/pro-content/多语种.png" alt="">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                                        <div class="tab-content-box-word-up">
+                                            <span class="tab-content-box-word-si"><strong>多语种支持</strong></span>
+                                        </div>
+                                        <div class="tab-content-box-word-down">
+                                            <span> 支持汉语（包括普通话、河南话、粤语、 客家话、四川话等）、英语、法语、德 语、维吾尔语等语言，且具备很强的口音普适性</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab2">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: blueviolet;height: 200PX;"></div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: red;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: yellow;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: black;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: pink;height: 200PX;">
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab3">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: blueviolet;height: 200PX;"></div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: red;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: yellow;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: black;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: pink;height: 200PX;">
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab4">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: blueviolet;height: 200PX;"></div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: red;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: yellow;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: black;height: 200PX;">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                    style="background: pink;height: 200PX;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,15 +396,60 @@
 </body>
 <script type="text/javascript">
     $(function () {
-        $('#div1').find('input').click(function () {
-            $('#div1').find('input').attr('class', '');
-            $('#div1').find('div').css('display', 'none');
-            $(this).attr('class', 'active');
-            $('#div1').find('div').eq($(this).index()).css('display', 'block');
-        })
-    })
-
-    $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+        onLoad();
+        BindEvent();
+        //页面加载
+        function onLoad() {
+            //渲染树
+            $('#left-tree').treeview({
+                data: getTree(),
+                levels: 1,
+                onNodeSelected: function (event, node) {},
+                showCheckbox: false //是否显示多选
+            });
+        }
+        //获取树数据
+        function getTree() {
+            var tree = [{
+                    text: "语音识别",
+                    id: "1",
+                    nodes: [{
+                            text: "即时语音识别",
+                        },
+                        {
+                            text: "音频文件识别"
+                        }
+                    ]
+                },
+                {
+                    text: "声纹识别",
+                    id: "2",
+                    nodes: [{
+                        text: "说话人识别"
+                    }, {
+                        text: "语种识别"
+                    }, {
+                        text: "关键词识别"
+                    }]
+                },
+                {
+                    text: "OCR识别",
+                    id: "3",
+                    nodes: [{
+                        text: "文字识别"
+                    }]
+                },
+                {
+                    text: "图像检索",
+                    id: "4",
+                    nodes: [{
+                        text: "反恐图片检索"
+                    }]
+                },
+            ];
+            return tree;
+        }
+    });
 </script>
 
 </html>
