@@ -17,7 +17,8 @@
  * limitations under the License.
  * ========================================================= */
 
-;(function ($, window, document, undefined) {
+;
+(function ($, window, document, undefined) {
 
 	/*global jQuery, console*/
 
@@ -33,15 +34,15 @@
 
 		levels: 2,
 
-		expandIcon: 'glyphicon glyphicon-plus',
-		collapseIcon: 'glyphicon glyphicon-minus',
-		loadingIcon: 'glyphicon glyphicon-hourglass',
-		emptyIcon: 'glyphicon',
+		expandIcon: '',
+		collapseIcon: '',
+		loadingIcon: '',
+		emptyIcon: '',
 		nodeIcon: '',
 		selectedIcon: '',
-		checkedIcon: 'glyphicon glyphicon-check',
-		partiallyCheckedIcon: 'glyphicon glyphicon-expand',
-		uncheckedIcon: 'glyphicon glyphicon-unchecked',
+		checkedIcon: '',
+		partiallyCheckedIcon: '',
+		uncheckedIcon: '',
 
 		color: undefined,
 		backColor: undefined,
@@ -202,7 +203,9 @@
 			}, this))
 			.then($.proxy(function (treeData) {
 				// initialize data
-				return this._setInitialStates({ nodes: treeData }, 0);
+				return this._setInitialStates({
+					nodes: treeData
+				}, 0);
 			}, this))
 			.then($.proxy(function () {
 				// render to DOM
@@ -232,8 +235,8 @@
 
 	Tree.prototype._loadLocalData = function (options, done) {
 		done.resolve((typeof options.data === 'string') ?
-								JSON.parse(options.data) :
-								$.extend(true, [], options.data));
+			JSON.parse(options.data) :
+			$.extend(true, [], options.data));
 	};
 
 	Tree.prototype._remove = function () {
@@ -387,8 +390,8 @@
 
 			// nodeId : unique, hierarchical identifier
 			node.nodeId = (parent && parent.nodeId) ?
-											parent.nodeId + '.' + node.index :
-											(level - 1) + '.' + node.index;
+				parent.nodeId + '.' + node.index :
+				(level - 1) + '.' + node.index;
 
 			// parentId : transversing up the tree
 			node.parentId = parent.nodeId;
@@ -424,11 +427,10 @@
 			// set expanded state; if not provided based on levels
 			if (!node.state.hasOwnProperty('expanded')) {
 				if (!node.state.disabled &&
-						(level < this._options.levels) &&
-						(node.nodes && node.nodes.length > 0)) {
+					(level < this._options.levels) &&
+					(node.nodes && node.nodes.length > 0)) {
 					node.state.expanded = true;
-				}
-				else {
+				} else {
 					node.state.expanded = false;
 				}
 			}
@@ -440,10 +442,9 @@
 
 			// set visible state; based parent state plus levels
 			if ((parent && parent.state && parent.state.expanded) ||
-					(level <= this._options.levels)) {
+				(level <= this._options.levels)) {
 				node.state.visible = true;
-			}
-			else {
+			} else {
 				node.state.visible = false;
 			}
 
@@ -451,8 +452,7 @@
 			if (node.nodes) {
 				if (node.nodes.length > 0) {
 					this._setInitialState(node, level, done);
-				}
-				else {
+				} else {
 					delete node.nodes;
 				}
 			}
@@ -470,11 +470,15 @@
 	Tree.prototype._sortNodes = function () {
 		return $.map(Object.keys(this._nodes).sort(function (a, b) {
 			if (a === b) return 0;
-			var a = a.split('.').map(function (level) { return parseInt(level); });
-			var b = b.split('.').map(function (level) { return parseInt(level); });
+			var a = a.split('.').map(function (level) {
+				return parseInt(level);
+			});
+			var b = b.split('.').map(function (level) {
+				return parseInt(level);
+			});
 
 			var c = Math.max(a.length, b.length);
-			for (var i=0; i<c; i++) {
+			for (var i = 0; i < c; i++) {
 				if (a[i] === undefined) return -1;
 				if (b[i] === undefined) return +1;
 				if (a[i] - b[i] > 0) return +1;
@@ -482,7 +486,7 @@
 			};
 
 		}), $.proxy(function (value, index) {
-		  return this._nodes[value];
+			return this._nodes[value];
 		}, this));
 	};
 
@@ -495,13 +499,11 @@
 		var classList = target.attr('class') ? target.attr('class').split(' ') : [];
 		if ((classList.indexOf('expand-icon') !== -1)) {
 			this._toggleExpanded(node, $.extend({}, _default.options));
-		}
-		else if ((classList.indexOf('check-icon') !== -1)) {
+		} else if ((classList.indexOf('check-icon') !== -1)) {
 			if (node.checkable) {
 				this._toggleChecked(node, $.extend({}, _default.options));
 			}
-		}
-		else {
+		} else {
 			if (node.selectable) {
 				this._toggleSelected(node, $.extend({}, _default.options));
 			} else {
@@ -525,7 +527,7 @@
 		if (!node) return;
 
 		// Lazy-load the child nodes if possible
-		if (typeof(this._options.lazyLoad) === 'function' && node.lazyLoad) {
+		if (typeof (this._options.lazyLoad) === 'function' && node.lazyLoad) {
 			this._lazyLoad(node);
 		} else {
 			this._setExpanded(node, !node.state.expanded, options);
@@ -575,8 +577,7 @@
 
 			// Optionally trigger event
 			this._triggerEvent('nodeExpanded', node, options);
-		}
-		else if (!state) {
+		} else if (!state) {
 
 			// Set node state
 			node.state.expanded = false;
@@ -614,8 +615,7 @@
 			if (node.$el) {
 				node.$el.removeClass('node-hidden');
 			}
-		}
-		else {
+		} else {
 
 			// Set node state to unchecked
 			node.state.visible = false;
@@ -644,7 +644,9 @@
 			// If multiSelect false, unselect previously selected
 			if (!this._options.multiSelect) {
 				$.each(this._findNodes('true', 'state.selected'), $.proxy(function (index, node) {
-					this._setSelected(node, false, $.extend(options, {unselecting: true}));
+					this._setSelected(node, false, $.extend(options, {
+						unselecting: true
+					}));
 				}, this));
 			}
 
@@ -664,13 +666,12 @@
 
 			// Optionally trigger event
 			this._triggerEvent('nodeSelected', node, options);
-		}
-		else {
+		} else {
 
 			// If preventUnselect true + only one remaining selection, disable unselect
 			if (this._options.preventUnselect &&
-					(options && !options.unselecting) &&
-					(this._findNodes('true', 'state.selected').length === 1)) {
+				(options && !options.unselecting) &&
+				(this._findNodes('true', 'state.selected').length === 1)) {
 				// Fire the nodeSelected event if reselection is allowed
 				if (this._options.allowReselect) {
 					this._triggerEvent('nodeSelected', node, options);
@@ -712,7 +713,9 @@
 
 		if (this._options.hierarchicalCheck) {
 			// Event propagation to the parent/child nodes
-			var childOptions = $.extend({}, options, {silent: options.silent || !this._options.propagateCheckEvent});
+			var childOptions = $.extend({}, options, {
+				silent: options.silent || !this._options.propagateCheckEvent
+			});
 
 			var state, currentNode = node;
 			// Temporarily swap the tree state
@@ -780,8 +783,7 @@
 
 			// Optionally trigger event
 			this._triggerEvent('nodeChecked', node, options);
-		}
-		else if (state === undefined && this._options.hierarchicalCheck) {
+		} else if (state === undefined && this._options.hierarchicalCheck) {
 
 			// Set node state to partially checked
 			node.state.checked = undefined;
@@ -841,8 +843,7 @@
 
 			// Optionally trigger event
 			this._triggerEvent('nodeDisabled', node, options);
-		}
-		else {
+		} else {
 
 			// Set node state to enabled
 			node.state.disabled = false;
@@ -867,8 +868,7 @@
 			if (node.$el) {
 				node.$el.addClass('node-result');
 			}
-		}
-		else {
+		} else {
 
 			node.searchResult = false;
 
@@ -907,8 +907,7 @@
 		if (!node.$el) {
 			node.$el = this._newNodeEl(node, previousNode)
 				.addClass('node-' + this._elementId);
-		}
-		else {
+		} else {
 			node.$el.empty();
 		}
 
@@ -1007,14 +1006,14 @@
 	}
 
 	Tree.prototype._addImage = function (node) {
- 		if (this._options.showImage && node.image) {
- 			node.$el
- 				.append(this._template.image.clone()
- 					.addClass('node-image')
- 					.css('background-image', "url('" + node.image + "')")
- 				);
- 		}
- 	}
+		if (this._options.showImage && node.image) {
+			node.$el
+				.append(this._template.image.clone()
+					.addClass('node-image')
+					.css('background-image', "url('" + node.image + "')")
+				);
+		}
+	}
 
 	// Creates a new node element from template and
 	// ensures the template is inserted at the correct position
@@ -1078,8 +1077,7 @@
 
 		if (!this._options.showBorder) {
 			style += 'border:none;';
-		}
-		else if (this._options.borderColor) {
+		} else if (this._options.borderColor) {
 			style += 'border:1px solid ' + this._options.borderColor + ';';
 		}
 		style += '}';
@@ -1087,7 +1085,7 @@
 		if (this._options.onhoverColor) {
 			style += '.node-' + this._elementId + ':not(.node-disabled):hover{' +
 				'background-color:' + this._options.onhoverColor + ';' +
-			'}';
+				'}';
 		}
 
 		// Style search results
@@ -1158,7 +1156,7 @@
 		text: $('<span class="text"></span>')
 	};
 
-	Tree.prototype._css = '.treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:12px;margin-right:5px}.treeview .node-disabled{color:silver;cursor:not-allowed}'
+	Tree.prototype._css = '.treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:25px;margin-right:10px}.treeview .node-disabled{color:silver;cursor:not-allowed}'
 
 
 	/**
@@ -1319,12 +1317,14 @@
 
 		// inserting nodes at specified positions
 		$.each(nodes, $.proxy(function (i, node) {
-			var insertIndex = (typeof(index) === 'number') ? (index + i) : (targetNodes.length + 1);
+			var insertIndex = (typeof (index) === 'number') ? (index + i) : (targetNodes.length + 1);
 			targetNodes.splice(insertIndex, 0, node);
 		}, this));
 
 		// initialize new state and render changes
-		this._setInitialStates({nodes: this._tree}, 0)
+		this._setInitialStates({
+				nodes: this._tree
+			}, 0)
 			.done($.proxy(function () {
 				if (parentNode && !parentNode.state.expanded) {
 					this._setExpanded(parentNode, true, options);
@@ -1402,7 +1402,9 @@
 		}, this));
 
 		// initialize new state and render changes
-		this._setInitialStates({nodes: this._tree}, 0)
+		this._setInitialStates({
+				nodes: this._tree
+			}, 0)
 			.done(this._render.bind(this));
 	};
 
@@ -1420,13 +1422,15 @@
 		options = $.extend({}, _default.options, options);
 
 		// insert new node
-		$.extend(node,newNode);
+		$.extend(node, newNode);
 
 		// remove old node from DOM
 		//this._removeNodeEl(node);
 
 		// initialize new state and render changes
-		this._setInitialStates({nodes: this._tree}, 0)
+		this._setInitialStates({
+				nodes: this._tree
+			}, 0)
 			.done(this._render.bind(this));
 	};
 
@@ -1532,13 +1536,13 @@
 			// Do not re-expand already expanded nodes
 			if (node.state.expanded) return;
 
-			if (typeof(this._options.lazyLoad) === 'function' && node.lazyLoad) {
+			if (typeof (this._options.lazyLoad) === 'function' && node.lazyLoad) {
 				this._lazyLoad(node);
 			}
 
 			this._setExpanded(node, true, options);
 			if (node.nodes) {
-				this._expandLevels(node.nodes, options.levels-1, options);
+				this._expandLevels(node.nodes, options.levels - 1, options);
 			}
 		}, this));
 	};
@@ -1553,7 +1557,7 @@
 		$.each(nodes, $.proxy(function (index, node) {
 			this._setExpanded(node, (level > 0) ? true : false, options);
 			if (node.nodes) {
-				this._expandLevels(node.nodes, level-1, options);
+				this._expandLevels(node.nodes, level - 1, options);
 			}
 		}, this));
 	};
@@ -1818,7 +1822,9 @@
 		Clears previous search results
 	*/
 	Tree.prototype.clearSearch = function (options) {
-		options = $.extend({}, { render: true }, options);
+		options = $.extend({}, {
+			render: true
+		}, options);
 
 		var results = $.each(this._getSearchResults(), $.proxy(function (index, node) {
 			this._setSearchResult(node, false, options);
@@ -1872,37 +1878,37 @@
 			var _obj = obj[attr.substring(0, index)];
 			var _attr = attr.substring(index + 1, attr.length);
 			return this._getNodeValue(_obj, _attr);
-		}
-		else {
+		} else {
 			if (obj.hasOwnProperty(attr) && obj[attr] !== undefined) {
 				return obj[attr].toString();
-			}
-			else {
+			} else {
 				return undefined;
 			}
 		}
 	};
-	
-    /** 
-     des:扩展bootstrap-treeview的编辑节点方法
-     编辑节点 
-     author:qlx 2017-3-31
-     */
+
+	/** 
+	 des:扩展bootstrap-treeview的编辑节点方法
+	 编辑节点 
+	 author:qlx 2017-3-31
+	 */
 	Tree.prototype.editNode = function (identifiers, options) {
-	    $.each(identifiers,$.proxy(function (i, node) {
-	        this.setEditNode(node, options);
-	    }, this));
-	    this._setInitialStates({ nodes: this._tree }, 0);
-	    this._render();
+		$.each(identifiers, $.proxy(function (i, node) {
+			this.setEditNode(node, options);
+		}, this));
+		this._setInitialStates({
+			nodes: this._tree
+		}, 0);
+		this._render();
 	}
 
-    /** 
-    * 编辑节点 
-    */
+	/** 
+	 * 编辑节点 
+	 */
 	Tree.prototype.setEditNode = function (node, options) {
-	    if (options) {
-	        $.extend(node, options);
-	    };
+		if (options) {
+			$.extend(node, options);
+		};
 	};
 
 
@@ -1926,21 +1932,17 @@
 			if (typeof options === 'string') {
 				if (!_this) {
 					logError('Not initialized, can not call method : ' + options);
-				}
-				else if (!$.isFunction(_this[options]) || options.charAt(0) === '_') {
+				} else if (!$.isFunction(_this[options]) || options.charAt(0) === '_') {
 					logError('No such method : ' + options);
-				}
-				else {
+				} else {
 					if (!(args instanceof Array)) {
-						args = [ args ];
+						args = [args];
 					}
 					result = _this[options].apply(_this, args);
 				}
-			}
-			else if (typeof options === 'boolean') {
+			} else if (typeof options === 'boolean') {
 				result = _this;
-			}
-			else {
+			} else {
 				$.data(this, pluginName, new Tree(this, $.extend(true, {}, options)));
 			}
 		});

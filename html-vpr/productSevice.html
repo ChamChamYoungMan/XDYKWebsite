@@ -7,449 +7,344 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="img/X.png" />
-    <title>信大煜坤</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index-innitial.css">
-    <link rel="stylesheet" href="css/bootstrap-treeview.min.css>">
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-treeview.js"></script>
-    <script type="text/javascript" src="js/"></script>
-    <style>
-        .nav-tabs>li {
-            width: 25%;
-            text-align: center;
-            vertical-align: middle;
-        }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="img/X.png" />
+  <title>信大煜坤</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/index-innitial.css" />
+  <link rel="stylesheet" href="css/bootstrap-treeview.min.css>" />
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-treeview.js"></script>
+  <style>
+    .nav-tabs>li {
+      width: 25%;
+      text-align: center;
+      vertical-align: middle;
+    }
 
-        .body-div-content {
-            width: 70%;
-            margin: 0;
-            padding: 1% 10% 5% 10%;
-        }
+    .body-div-content {
+      width: 70%;
+      margin: 0;
+      padding: 1% 10% 5% 10%;
+    }
 
-        .tab-content-sel {
-            margin-top: 1%;
-            height: auto;
-        }
+    .tab-content-sel {
+      margin-top: 1%;
+      height: auto;
+    }
 
+    .span-text {
+      margin-top: 5%;
+    }
 
-        .span-text {
-            margin-top: 5%;
-        }
+    .tab-div {
+      width: 100%;
+      height: auto;
+    }
 
-        .tab-div {
-            width: 100%;
-            height: auto;
-        }
+    .tab-content-div {
+      padding: 2% 7% 10% 7%;
+    }
 
-        .tab-content-div {
-            padding: 2% 7% 10% 7%;
-        }
+    .tab-content-box {
+      height: auto;
+      padding: 3% 7% 5% 7%;
+    }
 
-        .tab-content-box {
-            height: auto;
-            padding: 3% 7% 5% 7%;
-        }
+    .tab-content-box-img {
+      margin-top: 4%;
+      text-align: right;
+    }
 
-        .tab-content-box-img {
-            margin-top: 4%;
-            text-align: right;
-        }
+    .tab-content-box-word {
+      text-align: left;
+    }
 
-        .tab-content-box-word {
-            text-align: left;
-        }
+    .tab-content-box-word-size {
+      font-size: 20px;
+    }
 
-        .tab-content-box-word-size {
-            font-size: 20px;
-        }
+    .tab-content-box-word-up {
+      margin-top: 0;
+    }
 
-        .tab-content-box-word-up {
-            margin-top: 0;
-        }
+    .tab-content-box-word-down {
+      margin-top: 10%;
+    }
 
-        .tab-content-box-word-down {
-            margin-top: 10%;
-        }
-    </style>
+    .voice-icon {
+      background: url("img/pro-content/dyvms语音服务xiao.png") no-repeat;
+      display: inline-block;
+    }
+
+    .vpr-icon {
+      background: url("img/pro-content/声音xiao.png") no-repeat;
+      display: inline-block;
+    }
+
+    .img-icon {
+      background: url("img/pro-content/图像识别xiao.png") no-repeat;
+      display: inline-block;
+    }
+
+    .ocr-icon {
+      background: url("img/pro-content/扫描文字识别OCRxiao.png") no-repeat;
+      display: inline-block;
+    }
+
+    .voice-icon-accept,
+    .vpr-icon-accept,
+    .img-icon-accept,
+    .ocr-icon-accept {
+      width: 20px;
+      height: 18px;
+      /* background-position: 0% 0%; */
+    }
+
+    .node-left-tree.node-selected {
+      opacity: 0.5;
+    }
+  </style>
 </head>
 
 <body>
-    <!--导航-->
-    <section>
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        <img style="padding-top: 0%; width:100px; height:30px" src="img/xdykpng.png" alt="brand" />
-                    </a>
-                </div>
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#">产品</a></li>
-                    <li><a href="#">解决方案</a></li>
-                    <li><a href="#">技术支持</a></li>
-                    <li><a href="#">成功案例</a></li>
-                    <li><a href="#">关于我们</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <button type="submit" class="btn btn-default navbar-btn">
-                        注册
-                    </button>
-                    <button type="submit" class="btn btn-primary navbar-btn">
-                        登录
-                    </button>
-                </ul>
+  <!--导航-->
+  <section id="header"></section>
+  <!--banner图-->
+  <section>
+    <div style="width:1920px;height:560px;background-color:cornflowerblue;"></div>
+  </section>
+  <!--正式内容-->
+  <section>
+    <div class="container-fluid body-production-service">
+      <div class="text-brand-product">
+        <h3>产品服务</h3>
+        <h5>Product Service</h5>
+      </div>
+      <div class="body-div-content">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin-top:10%;">
+          <div class="panel panel-primary ">
+            <div class="panel-heading">
+              <h3 class="panel-title">产品服务</h3>
             </div>
-        </nav>
-    </section>
-    <!--banner图-->
-    <section>
-        <div style="width:1920px;height:560px;background-color:cornflowerblue;"></div>
-    </section>
-    <!--正式内容-->
-    <section>
-        <div class="container-fluid body-production-service">
-            <div class="text-brand-product">
-                <h3>产品服务</h3>
-                <h5>Product Service</h5>
+            <div class="panel-body">
+              <div id="left-tree"></div>
             </div>
-            <div class="body-div-content">
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="margin-top:10%;">
-                    <div class="panel panel-primary ">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">产品服务</h3>
-                        </div>
-                        <div class="panel-body right_centent">
-                            <div id="left-tree"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div class="container">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1" data-toggle="tab">
-                                    <div class="tab-div"><img src="img/pro-content/dyvms语音服务.png" /></div>
-                                    <div class="tab-div span-text"><span>语音识别</span></div>
-                                </a>
-                            </li>
-                            <li><a href="#tab2" data-toggle="tab">
-                                    <div class="tab-div"><img src="img/pro-content/声音.png" />
-                                    </div>
-                                    <div class="tab-div span-text"><span>声纹识别</span></div>
-                                </a></li>
-                            <li><a href="#tab3" data-toggle="tab">
-                                    <div class="tab-div"><img src="img/pro-content/扫描文字识别OCR.png" /></div>
-                                    <div class="tab-div span-text"><span>OCR识别</span></div>
-                                </a></li>
-                            <li><a href="#tab4" data-toggle="tab">
-                                    <div class="tab-div"><img src="img/pro-content/图像识别.png" />
-                                    </div>
-                                    <div class="tab-div span-text"><span>图像识别</span></div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="container">
-                        <div class="tab-content tab-content-div">
-                            <div role="tabpanel" class="tab-pane active tab-content-sel" id="tab1">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
-                                        <img src="img/pro-content/接入方式.png" alt="">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
-                                        <div class="tab-content-box-word-up">
-                                            <span class="tab-content-box-word-si"><strong>接入方式灵活</strong></span>
-                                        </div>
-                                        <div class="tab-content-box-word-down">
-                                            <span>可以根据用户要求接入本地服务器， 利用本机引擎进行识别</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
-                                        <img src="img/pro-content/多种场景.png" alt="">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
-                                        <div class="tab-content-box-word-up">
-                                            <span class="tab-content-box-word-si"><strong>多种场景定制</strong></span>
-                                        </div>
-                                        <div class="tab-content-box-word-down">
-                                            <span>可自由定制垂直领域的语音识别模型， 识别效果更精确</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
-                                        <img src="img/pro-content/识别速度快.png" alt="">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
-                                        <div class="tab-content-box-word-up">
-                                            <span class="tab-content-box-word-si"><strong>识别速度快</strong></span>
-                                        </div>
-                                        <div class="tab-content-box-word-down">
-                                            <span>采用优化深度学习算法，提高系统 效率，实现语音数据的传输和识别的同步，实时率可达0.3S以下</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
-                                        <img src="img/pro-content/超高识别率.png" alt="">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
-                                        <div class="tab-content-box-word-up">
-                                            <span class="tab-content-box-word-si"><strong>超高识别率</strong></span>
-                                        </div>
-                                        <div class="tab-content-box-word-down">
-                                            <span> 基于最新进的深度学习算法模型，普通识别准确率高达95%，对特定行业词汇进行优化，可进一步提升语音识别率</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
-                                        <img src="img/pro-content/多语种.png" alt="">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
-                                        <div class="tab-content-box-word-up">
-                                            <span class="tab-content-box-word-si"><strong>多语种支持</strong></span>
-                                        </div>
-                                        <div class="tab-content-box-word-down">
-                                            <span> 支持汉语（包括普通话、河南话、粤语、 客家话、四川话等）、英语、法语、德 语、维吾尔语等语言，且具备很强的口音普适性</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab2">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: blueviolet;height: 200PX;"></div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: red;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: yellow;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: black;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: pink;height: 200PX;">
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab3">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: blueviolet;height: 200PX;"></div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: red;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: yellow;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: black;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: pink;height: 200PX;">
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab4">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: blueviolet;height: 200PX;"></div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: red;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: yellow;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: black;height: 200PX;">
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                                    style="background: pink;height: 200PX;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-    <!--footer-->
-    <section>
-        <div class="foot-section container-fluid">
-            <ul class="foot-section-inhert" style="list-style: none;">
-                <li class="foot-subitem-left">
-                    <div id="hilp" class="col-xs-4 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>产品</h3>
-                            <li>
-                                <a href="#" target="_blank">语音识别</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">声纹识别</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">OCR识别</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">图像检索</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="resource" class="col-xs-4 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>解决方案</h3>
-                            <li>
-                                <a href="#" target="_blank">智能语音转写</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="aboutus" class="col-xs-4 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>技术支持</h3>
-                            <li>
-                                <a href="#" target="_blank">语音识别技术</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">语音合成技术</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">声纹识别技术</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">自然语言理解</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">视觉感知</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="seat" class="col-xs-4 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>成功案例</h3>
-                            <li>
-                                <a href="#" target="_blank">法院智能庭审系统</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">智能会议听抄系统</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">公安智能审讯系统</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="business" class="col-xs-4 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>关于我们</h3>
-                            <li>
-                                <a href="#" target="_blank">公司简介</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">组织架构</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">首席科学家</a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">加入我们</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="bis-coopera" class="col-xs-5 col-sm-2">
-                        <ul class="foot-section-list">
-                            <h3>商务合作</h3>
-                            <li>
-                                <p>咨询电话：18337186386（江小姐）</p>
-                            </li>
-                            <li>
-                                <p>地址:郑州市龙子湖智慧岛利丰国际大厦503、512</p>
-                            </li>
-                            <li>
-                                <p>关注微信号</p>
-                                <br />
-                                <img src="img/coo/信大煜坤公众号二维码.png" alt="#" />
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="foot-subitem-right">
-                    <img src="img/xdykpng.png" class="foot-xdyk-img" />
-                    <h3 class="foot-xdyk-line">信大煜坤</h3>
-                </li>
-                <hr />
-                <div class="text-brand-foot">
-                    <h6>
-                        友情链接：<a href="#">信大煜坤人工智能科技研究院 </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a
-                            href="#">信大煜坤人工智能科技有限公司</a>
-                    </h6>
-                    <h6>河南信大煜坤智能科技有限公司 版权所有 2018-2020</h6>
-                </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="container">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#tab1" data-toggle="tab">
+                  <div class="tab-div">
+                    <img src="img/pro-content/dyvms语音服务.png" />
+                  </div>
+                  <div class="tab-div span-text"><span>语音识别</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="#tab2" data-toggle="tab">
+                  <div class="tab-div">
+                    <img src="img/pro-content/声音.png" />
+                  </div>
+                  <div class="tab-div span-text"><span>声纹识别</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="#tab3" data-toggle="tab">
+                  <div class="tab-div">
+                    <img src="img/pro-content/扫描文字识别OCR.png" />
+                  </div>
+                  <div class="tab-div span-text"><span>OCR识别</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="#tab4" data-toggle="tab">
+                  <div class="tab-div">
+                    <img src="img/pro-content/图像识别.png" />
+                  </div>
+                  <div class="tab-div span-text"><span>图像识别</span></div>
+                </a>
+              </li>
             </ul>
+          </div>
+          <div class="container">
+            <div class="tab-content tab-content-div">
+              <div role="tabpanel" class="tab-pane active tab-content-sel" id="tab1">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                    <img src="img/pro-content/接入方式.png" alt="" />
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                    <div class="tab-content-box-word-up">
+                      <span class="tab-content-box-word-si"><strong>接入方式灵活</strong></span>
+                    </div>
+                    <div class="tab-content-box-word-down">
+                      <span>可以根据用户要求接入本地服务器，
+                        利用本机引擎进行识别</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                    <img src="img/pro-content/多种场景.png" alt="" />
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                    <div class="tab-content-box-word-up">
+                      <span class="tab-content-box-word-si"><strong>多种场景定制</strong></span>
+                    </div>
+                    <div class="tab-content-box-word-down">
+                      <span>可自由定制垂直领域的语音识别模型，
+                        识别效果更精确</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                    <img src="img/pro-content/识别速度快.png" alt="" />
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                    <div class="tab-content-box-word-up">
+                      <span class="tab-content-box-word-si"><strong>识别速度快</strong></span>
+                    </div>
+                    <div class="tab-content-box-word-down">
+                      <span>采用优化深度学习算法，提高系统
+                        效率，实现语音数据的传输和识别的同步，实时率可达0.3S以下</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                    <img src="img/pro-content/超高识别率.png" alt="" />
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                    <div class="tab-content-box-word-up">
+                      <span class="tab-content-box-word-si"><strong>超高识别率</strong></span>
+                    </div>
+                    <div class="tab-content-box-word-down">
+                      <span>
+                        基于最新进的深度学习算法模型，普通识别准确率高达95%，对特定行业词汇进行优化，可进一步提升语音识别率</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tab-content-box">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tab-content-box-img">
+                    <img src="img/pro-content/多语种.png" alt="" />
+                  </div>
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tab-content-box-word">
+                    <div class="tab-content-box-word-up">
+                      <span class="tab-content-box-word-si"><strong>多语种支持</strong></span>
+                    </div>
+                    <div class="tab-content-box-word-down">
+                      <span>
+                        支持汉语（包括普通话、河南话、粤语、
+                        客家话、四川话等）、英语、法语、德
+                        语、维吾尔语等语言，且具备很强的口音普适性</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab2">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: blueviolet;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: red;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: yellow;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: black;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: pink;height: 200PX;"></div>
+              </div>
+              <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab3">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: blueviolet;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: red;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: yellow;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: black;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: pink;height: 200PX;"></div>
+              </div>
+              <div role="tabpanel" class="tab-pane  tab-content-sel" id="tab4">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: blueviolet;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: red;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: yellow;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: black;height: 200PX;"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="background: pink;height: 200PX;"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
+      </div>
+    </div>
+  </section>
+  <!--footer-->
+  <section id="footer"></section>
 </body>
 <script type="text/javascript">
-    $(function () {
-        onLoad();
-        BindEvent();
-        //页面加载
-        function onLoad() {
-            //渲染树
-            $('#left-tree').treeview({
-                data: getTree(),
-                levels: 1,
-                onNodeSelected: function (event, node) {},
-                showCheckbox: false //是否显示多选
-            });
-        }
-        //获取树数据
-        function getTree() {
-            var tree = [{
-                    text: "语音识别",
-                    id: "1",
-                    nodes: [{
-                            text: "即时语音识别",
-                        },
-                        {
-                            text: "音频文件识别"
-                        }
-                    ]
-                },
-                {
-                    text: "声纹识别",
-                    id: "2",
-                    nodes: [{
-                        text: "说话人识别"
-                    }, {
-                        text: "语种识别"
-                    }, {
-                        text: "关键词识别"
-                    }]
-                },
-                {
-                    text: "OCR识别",
-                    id: "3",
-                    nodes: [{
-                        text: "文字识别"
-                    }]
-                },
-                {
-                    text: "图像检索",
-                    id: "4",
-                    nodes: [{
-                        text: "反恐图片检索"
-                    }]
-                },
-            ];
-            return tree;
-        }
+  $(document).ready(function () {
+    //页面加载
+    onLoad();
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+  });
+
+  function onLoad() {
+    //渲染树
+    $("#left-tree").treeview({
+      data: getTree(),
+      levels: 2,
+      showBorder: false
+      //onNodeSelected: function(event, node) {}
+      //showCheckbox: false //是否显示多选
     });
+  }
+  //获取树数据
+  function getTree() {
+    var tree = [{
+        text: "语音识别",
+        icon: "voice-icon voice-icon-accept",
+        id: "1",
+        nodes: [{
+            text: "即时语音识别"
+          },
+          {
+            text: "音频文件识别"
+          }
+        ]
+      },
+      {
+        text: "声纹识别",
+        icon: "vpr-icon vpr-icon-accept",
+        id: "2",
+        nodes: [{
+            text: "说话人识别"
+          },
+          {
+            text: "语种识别"
+          },
+          {
+            text: "关键词识别"
+          }
+        ]
+      },
+      {
+        text: "OCR识别",
+        icon: "ocr-icon ocr-icon-accept",
+        id: "3",
+        nodes: [{
+          text: "文字识别"
+        }]
+      },
+      {
+        text: "图像检索",
+        icon: "img-icon img-icon-accept",
+        id: "4",
+        nodes: [{
+          text: "反恐图片检索"
+        }]
+      }
+    ];
+    return tree;
+  }
 </script>
 
 </html>
