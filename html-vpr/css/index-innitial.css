@@ -36,12 +36,17 @@
   width: 25%;
   height: 300px;
 
-  padding: 0;
+  padding: 0 0 0 0;
   margin: 0 2% 3% 0;
 }
 
 .vpr-tech-core {
-  box-shadow: 2px 2px 2px #888888;
+  box-shadow: 2px 0 2px #888888;
+}
+
+.vpr-text-swiper {
+  width: 100%;
+  height: auto;
 }
 
 .div-align {
@@ -52,7 +57,7 @@
 .div-fetch-solve,
 .div-fetch-product {
   margin-top: 30px;
-  margin-left: 18%;
+  margin-left: 17%;
 }
 
 .div-fetch-solve {
@@ -88,7 +93,7 @@
 
 .vpr-subitem-children-core-bgc {
   padding: 20% 0 0 0;
-  background: url("../img/core/矩形699拷贝10.png") no-repeat;
+  background: url("../img/core/矩形699拷贝10.png");
 }
 
 .vpr-subitem-children-core-tts {
@@ -118,7 +123,7 @@
 
 .vpr-subitem-children-solve-bgc {
   padding: 5% 3% 0 3%;
-  background: url("../img/solve/矩形743拷贝9.png") no-repeat;
+  background: url("../img/solve/矩形743拷贝9.png");
 }
 
 .vpr-subitem-children-solve-court {
