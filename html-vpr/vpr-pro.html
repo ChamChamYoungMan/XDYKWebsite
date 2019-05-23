@@ -309,12 +309,14 @@
             var gg = $(this).attr("title");
             var kk = $(gg).attr("class");
             for (var i = 0; i < $(".tab").length; i++) {
+                //处理显示内容
                 if ($(".tab").eq(i).hasClass(gg)) {
                     $(".tab").eq(i).removeClass("hide");
                 } else {
                     $(".tab").eq(i).addClass("hide");
                 }
             }
+            //处理导航点击高亮
             var Timg = $(this).children("img").attr("src");
             var TBimg = Timg.split('/')[Timg.split('/').length - 1].split('.')[0];
             if (TBimg.indexOf('b') < 0) {
