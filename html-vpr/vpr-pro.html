@@ -48,19 +48,19 @@
             <div>
                 <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4" style="padding: 20px 0 20px 0;">
                     <a href="javascript:void(0);" title="socialinsurance">
-                        <img src="img/vpr-pro/1.png" />
+                        <img src="img/vpr-pro/1b.png" />
                         <strong style="margin-left:5px;"><span
-                                style="font-size:15px;color: black;">社会保险</span></strong></a>
+                                style="font-size:15px;color: #2277E6;">社会保险</span></strong></a>
                 </div>
                 <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4" style="padding: 20px 0 20px 0">
                     <a href="javascript:void(0);" title="publicsafe">
                         <img src="img/vpr-pro/2.png" /><strong style="margin-left:5px;"><span
-                                style="font-size:15px;color: black;">公共安全</span></strong></a>
+                                style="font-size:15px;color: #333333;">公共安全</span></strong></a>
                 </div>
                 <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4" style="padding: 20px 0 20px 0">
                     <a href="javascript:void(0);" title="intelligencehard">
                         <img src="img/vpr-pro/3.png" /><strong style="margin-left:5px;"><span
-                                style="font-size:15px;color: black;">智能硬件</span></strong></a>
+                                style="font-size:15px;color: #333333;">智能硬件</span></strong></a>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                                 style="font-size: 14px">我国社保目前面临三大问题，“老龄化”加速；社保金存在冒领；解决冒领的方法成本高、效率低。信达煜坤AI声纹识别系统，根据现状，结合当前社保业务流程，提供用户远端身份校验和生存认证AI声纹解决方案，支持多终端，跨信道进行身份校验。百万级声纹数据库毫秒级相应，准确率高达99.5%以上；同时，支持文本无关声纹检测和活体攻击检测，有效避免养老金的流失。</span>
                         </div>
                     </div>
-                    <div style="margin-top:2%;width:100%;height: auto;padding: 0 3% 1% 3%">
+                    <div style="margin-top:2%;width:100%;height: auto;padding: 0 10% 1% 10%">
                         <h3><strong>适用场景</strong></h3>
                         <div style="margin-top:2%;">
                             <ul>
@@ -145,7 +145,7 @@
                                 style="font-size: 14px">信大煜坤与“公检法”等司法机构深度合作，利用先进的声纹技术提供高效的解决方案，采集和建立重点、敏感管控人员声纹特征数据库，进行1：1和1：N的声纹认证和识别。对各种违法、反动行为进行精确打击，有效缩小案件侦查范围，有效降低基于通讯的电信网络诈骗的犯罪率，提高社会治安。</span>
                         </div>
                     </div>
-                    <div style="margin-top:2%;width:100%;height: auto;padding: 0 3% 1% 3%">
+                    <div style="margin-top:2%;width:100%;height: auto;padding:  0 10% 1% 10%">
                         <h3><strong>适用场景</strong></h3>
                         <div style="margin-top:2%;">
                             <ul>
@@ -226,7 +226,7 @@
                 </div>
                 <div class="hide tab intelligencehard">
                     <div style="padding: 0 20% 0 20%;">
-                        <div >
+                        <div>
                             <h3><strong>智能硬件</strong></h3>
                         </div>
                         <div style="margin-top:1%;color: #333333;padding: 0 20% 0 20%">
@@ -234,7 +234,7 @@
                                 style="font-size: 14px">信大煜坤智能声纹采集终端（ykvp-0902），作为声纹采集设备的重要组成部分，将拥有自主产权的第三代深度神经网络算法集成至直径仅有11.5mm的设备上，运用信大煜坤独创的远场拾音结合声源定位技术并结合信大煜坤声纹采集终端软件，将整个声纹采集工作的流程一体化，大大减少声纹采集工作的难度，节省了声纹采集建库的人力成本。助力声纹信息在全省乃至全国的信息储备和应用。</span>
                         </div>
                     </div>
-                    <div style="margin-top:2%;width:100%;height: auto;padding: 0 3% 1% 3%">
+                    <div style="margin-top:2%;width:100%;height: auto;padding: 0 10% 1% 10%">
                         <h3><strong>适用场景</strong></h3>
                         <div style="margin-top:2%;">
                             <ul>
@@ -305,22 +305,37 @@
     $(document).ready(function () {
         $("#header").load("header.html");
         $("#footer").load("footer.html");
-        $(".clicka a").click(function(){
+        $(".clicka a").click(function () {
             var gg = $(this).attr("title");
-            var kk =$(gg).attr("class"); 
-            for(var i = 0 ;i<$(".tab").length;i++)
-            {
-                if($(".tab").eq(i).hasClass(gg)){
+            var kk = $(gg).attr("class");
+            for (var i = 0; i < $(".tab").length; i++) {
+                if ($(".tab").eq(i).hasClass(gg)) {
                     $(".tab").eq(i).removeClass("hide");
-                }else
-                {
+                } else {
                     $(".tab").eq(i).addClass("hide");
+                }
+            }
+            var Timg = $(this).children("img").attr("src");
+            var TBimg = Timg.split('/')[Timg.split('/').length - 1].split('.')[0];
+            if (TBimg.indexOf('b') < 0) {
+                $(this).children("img").attr("src", 'img/vpr-pro/' + TBimg + 'b.png');
+                $(this).children("strong").children("span").css('color', '#2277E6');
+                var tk = $(this).parent().siblings();
+                for (var i = 0; i < tk.length; i++) {
+                    var tname = tk.eq(i).children("a").children("img").attr("src");
+                    if (tname.split('/')[tname.split('/').length - 1].indexOf('b') >= 0) {
+                        $(tk.eq(i)).children("a").children("img").attr("src", 'img/vpr-pro/' + tname
+                            .split('/')[tname.split('/').length - 1]
+                            .split(
+                                '.')[0].substring(0, 1) +
+                            ".png");
+                        $(tk.eq(i)).children("a").children("strong").children("span").css("color",
+                            "#333333");
+                    }
                 }
             }
         });
     })
-
-
 </script>
 
 </html>
