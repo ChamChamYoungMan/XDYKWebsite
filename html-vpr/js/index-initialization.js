@@ -7,7 +7,7 @@ $(document).ready(function () {
             i = 1;
         }
         $("#test_Pic>img")
-            .attr("src", "img/" + i + ".png")
+            .attr("src", "img/" + i + ".jpg")
             .fadeIn(1000);
     }, 500);
     var mySwiper = new Swiper("#swiper-container1", {
