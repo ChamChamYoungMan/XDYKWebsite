@@ -353,6 +353,10 @@
     //页面加载
     onLoad();
     postIndexPama();
+    $(window).resize(function () {
+      sizeZoom = detectZoom();
+      document.getElementsByTagName('body')[0].style.zoom = sizeZoom;
+    });
 
     $("#header").load("header.html");
     $("#footer").load("footer.html");
@@ -493,6 +497,20 @@
       $("#" + Tpost).addClass("node-selected");
     }, 100);
   }
+
+  function detectZoom() {
+    var ratio = 0;
+    screen = window.screen;
+    ua = navigator.userAgent.toLowerCase();
+    //alert(window.innerWidth);
+    if (window.innerWidth != undefined) {
+      ratio = window.innerWidth / 1920;
+    }
+    // if (ratio) {
+    //   ratio = Math.round(ratio * 100);
+    // }
+    return ratio;
+  };
 </script>
 
 </html>

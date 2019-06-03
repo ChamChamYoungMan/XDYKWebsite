@@ -193,7 +193,10 @@
                     }
                 });
             });
-
+            $(window).resize(function () {
+                sizeZoom = detectZoom();
+                document.getElementsByTagName('body')[0].style.zoom = sizeZoom;
+            });
         });
 
         $("a").click(function () {
@@ -225,6 +228,20 @@
             $(".item-info a").eq(Tpost - 1).trigger("click");
 
         }
+
+        function detectZoom() {
+            var ratio = 0;
+            screen = window.screen;
+            ua = navigator.userAgent.toLowerCase();
+            //alert(window.innerWidth);
+            if (window.innerWidth != undefined) {
+                ratio = window.innerWidth / 1920;
+            }
+            // if (ratio) {
+            //   ratio = Math.round(ratio * 100);
+            // }
+            return ratio;
+        };
     </script>
 </body>
 

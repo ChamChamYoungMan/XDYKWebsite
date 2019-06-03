@@ -337,7 +337,25 @@
                 }
             }
         });
+        $(window).resize(function () {
+            sizeZoom = detectZoom();
+            document.getElementsByTagName('body')[0].style.zoom = sizeZoom;
+        });
     })
+
+    function detectZoom() {
+        var ratio = 0;
+        screen = window.screen;
+        ua = navigator.userAgent.toLowerCase();
+        //alert(window.innerWidth);
+        if (window.innerWidth != undefined) {
+            ratio = window.innerWidth / 1920;
+        }
+        // if (ratio) {
+        //   ratio = Math.round(ratio * 100);
+        // }
+        return ratio;
+    };
 </script>
 
 </html>
